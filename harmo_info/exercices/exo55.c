@@ -21,7 +21,6 @@ int main() {
 
 	for(i=1;i<nb_lines;i++) {
 		print_line(i, nb_lines-i);
-		print_line(i, nb_lines-i);
 		printf("\n");
 	}
 
