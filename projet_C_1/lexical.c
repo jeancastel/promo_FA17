@@ -374,8 +374,11 @@ objet Analyse (char * expression)
 int main() {
     char chaine[100];
     objet monana = NULL;
+
     printf("Veuillez entrer une fonction : ");
     scanf("%s", chaine);
+
     monana = Analyse(chaine);
+
     return 0;
 }
