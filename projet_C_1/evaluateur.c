@@ -1,7 +1,8 @@
 #include "header/evaluateur.h"
+#include "header/declaration.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
+#include "math.h"
 
 
 Case* bloc, *preums;
