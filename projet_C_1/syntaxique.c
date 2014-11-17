@@ -1,5 +1,7 @@
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include "header/syntaxique.h"
-#include "string.h"
 #include "header/declaration.h"
 
 int erreur;
