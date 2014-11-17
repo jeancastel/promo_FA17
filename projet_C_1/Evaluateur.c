@@ -42,11 +42,12 @@ void afficher_Liste(Case* first){
 	}
 }
 
-void afficherTableau(double ** tab){
-	int i = 0;
-		while(i<5){
-			printf("%lf  %lf \n", tab[i][0], tab[i][1]);
-			i++;
+void afficherListeTracage(list_tracage* tab){
+	list_tracage* tmp = NULL;
+	tmp = tab;
+	while (tmp->suiv != NULL){
+		printf("%lf = %lf \n", tmp->abscisse , tmp->ordonnee);
+		tmp = tmp->suiv;
 	}
 }
 
@@ -76,8 +77,8 @@ int main(){
 	initialiser();
 	empiler(&racine);
 	afficher_Liste(preums);
-	double** res = calculer(preums, 1, 3, 10);
-	afficherTableau(res);
+	list_tracage* res = calculer(preums, 1, 3, 10);
+	afficherListeTracage(res);
 
 	// permet de laisser la console ouverte
 	int b = scanf("%lf", &b);
@@ -85,24 +86,27 @@ int main(){
 }
 
 
-double** calculer(Case* instruct, int range, int min, int max)
+list_tracage* calculer(Case* instruct, int range, int min, int max)
 {
 	Case* debut = instruct;
 	double gauche =0 , droit = 0;  // déclaration des 2 valeurs gauche et droit
 	int x = 0;
-
+	list_tracage* liste = (list_tracage*)malloc(sizeof(list_tracage)); //créé le premier maillon de la liste chainée liste
+	list_tracage* premier = liste; //valeur pour conserver le premier maillon de la chaine
 	if (range == 0){
 		printf("ERREUR, RANGE != 0");
 		exit(1);
 	}
 
 	int nbCalc = 0;
-	nbCalc = (max - min) / range;	   //calcule le nombre de case
+	//calcule le nombre de case
+	nbCalc = (max - min) / range;
+
 	//creation d'un tableau pour les résultats
-	double** returnTab = (double**)malloc(sizeof(double*)*nbCalc);
+	/*double** returnTab = (double**)malloc(sizeof(double*)*nbCalc);
 	for (int i = 0; i < nbCalc; i++){
 		returnTab[i] = (double*)malloc(sizeof(double) * 2);
-	}
+	}*/
 
 	//Calcul pour chacune des cases du tableau
 	for (int idx = 0; idx < nbCalc; idx++)
@@ -192,10 +196,17 @@ double** calculer(Case* instruct, int range, int min, int max)
 			instruct = instruct->next;
 		}
 		// ranger le résultat dans le tableau
-		returnTab[idx][1] = gauche;
+		/*returnTab[idx][1] = gauche;
 		returnTab[idx][0] = x;
+		*/
+		//Ranger dans la liste chainé
+		liste->abscisse = x;
+		liste->ordonnee = gauche;
+		liste->suiv = (list_tracage*)malloc(sizeof(list_tracage));
+		liste = liste->suiv;
+		liste->suiv = NULL;
 	}
-	return returnTab;
+	return premier;
 }
 
 

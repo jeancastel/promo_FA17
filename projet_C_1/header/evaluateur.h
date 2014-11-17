@@ -9,4 +9,4 @@ typedef struct Case
 	typejeton jeton;
 	struct Case* next;
 } Case;
-double** calculer(Case* instruct, int range, int min, int max);
+list_tracage* calculer(Case* instruct, int range, int min, int max);
