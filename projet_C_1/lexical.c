@@ -408,5 +408,5 @@ int main() {
 
     monana = Analyse(chaine);
 
-    return monana;
+    return 0;
 }
