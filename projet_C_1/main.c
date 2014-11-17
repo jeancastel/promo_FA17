@@ -4,7 +4,7 @@
 #include "header/declaration.h"
 #include "lexical.c"
 #include "syntaxique.c"
-//#include "evaluateur.c"
+#include "evaluateur.c"
 //#include "graph.c"
 #define NB_MAX_CARACTERES 50
 
