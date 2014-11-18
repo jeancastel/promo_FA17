@@ -371,14 +371,3 @@ objet Analyse (char * expression)
     }
     return (premier); //Retourne la racine de la chaîne.
 }
-int main() {
-    char chaine[100];
-    objet monana = NULL;
-
-    printf("Veuillez entrer une fonction : ");
-    scanf("%s", chaine);
-
-    monana = Analyse(chaine);
-
-    return 0;
-}

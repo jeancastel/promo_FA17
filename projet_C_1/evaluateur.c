@@ -1,8 +1,8 @@
-#include "stdafx.h"
-#include "evaluateur.h"
+#include "header/evaluateur.h"
+#include "header/declaration.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
+#include "math.h"
 
 
 Case* bloc, *preums;
@@ -51,6 +51,7 @@ void afficherListeTracage(list_tracage* tab){
 	}
 }
 
+/*
 int main(){
 	typejeton jg, jd, jr;
 	feuille g, d, racine;
@@ -84,7 +85,7 @@ int main(){
 	int b = scanf("%lf", &b);
 
 }
-
+*/
 
 list_tracage* calculer(Case* instruct, int range, int min, int max)
 {
@@ -109,7 +110,8 @@ list_tracage* calculer(Case* instruct, int range, int min, int max)
 	}*/
 
 	//Calcul pour chacune des cases du tableau
-	for (int idx = 0; idx < nbCalc; idx++)
+    int idx;
+	for (idx = 0; idx < nbCalc; idx++)
 	{
 		// réinit valeurs
 		gauche = 0;

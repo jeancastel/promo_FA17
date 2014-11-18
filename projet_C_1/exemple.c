@@ -4,17 +4,11 @@
  **************************/
 
 #include <stdlib.h>//pour le random
-
-#include "graph.h"
-
-#include "math.h";
-
-#include "glut.h";
-
-#include "stdio.h";
-
-#include "string.h";
-
+#include "header/graph.h"
+#include "math.h"
+#include "header/glut.h"
+#include "stdio.h"
+#include "string.h"
 #include <time.h>//pour le random en fonction du temps
 
 
