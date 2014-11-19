@@ -1,19 +1,17 @@
-//
-//  main.c
-//  td_fibonacci
-//
-//  Created by Maxime Renusson on 11/18/14.
-//  Copyright (c) 2014 Maxime Renusson. All rights reserved.
-//
-
 #include <stdio.h>
 
 int main(int argc, const char * argv[]) {
     printf("N ?\n");
     long int n = 0;
+    int i;
     scanf("%ld", &n);
-    long int fibonacci (long int n);
-    printf("%ld", fibonacci(n));
+
+    printf("\n\n");
+
+    for(i = 0; i <= n; i++){
+        long int fibonacci (long int i);
+        printf("%d : %ld\n", i, fibonacci(i));
+    }
     return 0;
 }
 

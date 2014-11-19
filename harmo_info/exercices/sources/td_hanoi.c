@@ -12,7 +12,7 @@ int main(int argc, const char * argv[]) {
     
     void hanoi(int n, int i, int j);
     
-    hanoi(3,1,3);
+    hanoi((int)*argv[1],1,3);
     return 0;
 }
 
