@@ -11,7 +11,7 @@ public class check {
 
 	    @Before
 	    public void setUp() {
-	        dico = new Dictionary("English", "Français");
+	        dico = new Dictionary("English", "Franï¿½ais");
 	    }
 
 	    protected void addTranslations() {
@@ -19,15 +19,15 @@ public class check {
 	        dico.addTranslation("demain", "tomorrow");
 	        dico.addTranslation("chien", "dog");
 	        dico.addTranslation("maison", "house");
-	        dico.addTranslation("étudiant", "student");
+	        dico.addTranslation("Etudiant", "student");
 	    }
 
 	    @Test
 	    public void test_correctLanguages() {
-	        assertFalse(dico.getLanguage("Deutsch", "Español"));
-	        assertFalse(dico.getLanguage("Français", "Brezhoneg"));
-	        assertTrue(dico.getLanguage("English", "Français"));
-	        assertTrue(dico.getLanguage("Français", "English"));
+	        assertFalse(dico.getLanguage("Deutsch", "Espaï¿½ol"));
+	        assertFalse(dico.getLanguage("Franï¿½ais", "Brezhoneg"));
+	        assertTrue(dico.getLanguage("English", "Franï¿½ais"));
+	        assertTrue(dico.getLanguage("Franï¿½ais", "English"));
 	    }
 
 	    @Test
